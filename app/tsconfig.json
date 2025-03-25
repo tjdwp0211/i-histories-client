@@ -21,7 +21,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "@/comps": ["./src/_components/index.ts"],
-      "@/global": ["./src/_global/index.ts"]
+      "@/global": ["./src/_global/index.ts"],
+      "@/constants": ["./src/_global/constants/index.ts"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
