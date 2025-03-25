@@ -9,12 +9,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <G.GlobalThemeProvider>
-      <G.RootStyle />
       <html lang="ko">
         <head></head>
-        <body className={G.ibmPlex.variable} suppressHydrationWarning={true}>
-          <G.StyledComponentsRegistry>{children}</G.StyledComponentsRegistry>
-        </body>
+        <G.StyledComponentsRegistryProvider>
+          <body className={G.ibmPlex.variable} suppressHydrationWarning={true}>
+            {children}
+          </body>
+        </G.StyledComponentsRegistryProvider>
       </html>
     </G.GlobalThemeProvider>
   );
