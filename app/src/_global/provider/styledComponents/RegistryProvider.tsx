@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState } from "react";
 import { useServerInsertedHTML } from "next/navigation";
 import { ServerStyleSheet, StyleSheetManager } from "styled-components";
@@ -10,7 +8,6 @@ export default function StyledComponentsRegistryProvider({ children }: { childre
 
   useServerInsertedHTML(() => {
     const styles = styledComponentsStyleSheet.getStyleElement();
-    console.log(styles);
     styledComponentsStyleSheet.instance.clearTag();
 
     return <>{styles}</>;
@@ -57,6 +54,10 @@ function RootStyle() {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+  }
+
+  a, abbr, acronym, b, bdo, big, br, button, cite, code, dfn, em, i, img, input, kbd, label, map, object, output, q, samp, select, small, span, strong, sub, sup, textarea, time, tt, var {
+    display: inline-block;
   }
 
   a {
