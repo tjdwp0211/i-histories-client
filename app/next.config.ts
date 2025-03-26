@@ -6,6 +6,12 @@ const nextConfig: NextConfig = {
   compiler: {
     styledComponents: true,
   },
+  // images: {
+  //   localPatterns: [
+  //     { pathname: "/ui/**", search: "" },
+  //     { pathname: "/portfolio/**", search: "" },
+  //   ],
+  // },
 };
 
 export default nextConfig;
