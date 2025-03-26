@@ -1,5 +1,15 @@
 import type { Metadata } from "next";
 import * as G from "@/global";
+import { IBM_Plex_Sans } from "next/font/google";
+
+const ibmPlex = IBM_Plex_Sans({
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+  display: "fallback",
+  style: ["normal"],
+  subsets: ["latin"],
+  preload: true,
+  variable: "--ibm-sans",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -12,7 +22,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <html lang="ko">
         <head></head>
         <G.StyledComponentsRegistryProvider>
-          <body className={G.ibmPlex.variable} suppressHydrationWarning={true}>
+          <body className={ibmPlex.variable} suppressHydrationWarning={true}>
+            <div id="portal-for-modal" />
             {children}
           </body>
         </G.StyledComponentsRegistryProvider>
